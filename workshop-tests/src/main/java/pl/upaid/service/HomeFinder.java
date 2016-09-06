@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface HomeFinder {
 
-    Optional<Family> findFor(Person person);
 }

@@ -21,29 +21,27 @@ class AnimalRepositorySpec extends Specification {
     AnimalRepository animalRepository
 
     def "Should find any cat"() {
-        expect:
-        animalRepository.findFirstBySpecies(CAT).get().species == CAT
     }
 
     def "Should find any tiger"() {
-        expect:
-        animalRepository.findFirstBySpecies(TIGER).get().species == TIGER
+
     }
 
     def "Should find two animals"() {
-        expect:
-        animalRepository.findAll().size() == 2
     }
 
-    @Sql("/test.sql")
-    @Transactional
-    def "Should find three animals after update database"() {
-        expect:
-        animalRepository.findAll().size() == 3
-    }
+//    @Sql("/test.sql")
+//    @Transactional
+//    def "Should find three animals after update database"() {
+//        expect:
+//        animalRepository.findAll().size() == 3
+//    }
+//
+//    def "Should next find two animals"() {
+//        expect:
+//        animalRepository.findAll().size() == 2
+//    }
 
-    def "Should next find two animals"() {
-        expect:
-        animalRepository.findAll().size() == 2
-    }
+//    expect:
+//    animalRepository.findFirstBySpecies(TIGER).get().species == TIGER
 }

@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import pl.upaid.domain.Person;
 
 import java.util.Collection;
+import java.util.List;
 
 import static org.springframework.http.HttpMethod.GET;
 
@@ -19,10 +20,10 @@ public class PersonCrud {
     private RestTemplate restTemplate;
 
     public Collection<Person> getAll() {
-        ParameterizedTypeReference listPersonType = new ParameterizedTypeReference<Resources<Person>>() {
+        ParameterizedTypeReference listPersonType = new ParameterizedTypeReference<List<Person>>() {
         };
 
-        Resources<Person> persons = (Resources<Person>) restTemplate.exchange("http://localhost:8080/persons", GET, null, listPersonType).getBody();
-        return persons.getContent();
+        List<Person> persons = (List<Person>) restTemplate.exchange("http://localhost:8080/persons", GET, null, listPersonType).getBody();
+        return persons;
     }
 }
