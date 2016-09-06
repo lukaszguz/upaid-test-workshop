@@ -1,0 +1,1 @@
+INSERT INTO animal(id, name, species) VALUES (-1, 'pies', 'DOG');
